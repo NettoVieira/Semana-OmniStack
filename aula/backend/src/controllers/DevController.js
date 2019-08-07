@@ -8,7 +8,7 @@ module.exports = {
   async store(req, res) {
     const { username } = req.body // usando desestruturação
     
-    const userExist = await Dev.findOneAndDelete({ user: username })
+    const userExist = await Dev.findOne({ user: username })
 
     if(userExist){
       return res.json(userExist)
